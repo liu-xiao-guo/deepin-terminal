@@ -1,0 +1,63 @@
+name: deepin-terminal
+version: '0.1' 
+summary: deepin-terminal
+description: |
+  This is deepin-terminal snap application
+
+grade: stable
+confinement: devmode
+
+apps:
+  deepin-terminal:
+    command: bin/desktop-launch $SNAP/usr/bin/deepin-terminal
+    plugs:
+      - network
+      - unity7
+      - x11
+      - home
+      - opengl
+      - pulseaudio
+      - browser-support
+      - network-bind
+
+parts:
+  app:
+    source: .
+    plugin: cmake
+    configflags: [-DCMAKE_INSTALL_PREFIX=/usr]
+    build-packages:
+      - valac
+      - libvte-2.91-dev
+      - libgee-0.8-dev
+      - libwnck-3-dev
+      - libsecret-1-dev
+      - libjson-glib-dev
+    stage-packages:
+      - libgee-0.8-2
+      - libcanberra-gtk3-module:amd64 
+      - libsecret-1-0
+      - libjson-glib-1.0-0
+      - libgtk-3-0
+      - libc6
+      - libcairo-gobject2
+      - libcairo2
+      - libfontconfig1
+      - libfreetype6
+      - libgdk-pixbuf2.0-0
+      - libglib2.0-0
+      - libgnutls30
+      - libpango-1.0-0
+      - libpangocairo-1.0-0
+      - libvte-2.91-0
+      - libwnck-3-0
+      - libx11-6
+      - libxcb1
+      - zlib1g
+      - zssh
+      - lrzsz
+      - libatk1.0-0
+    after: [desktop-gtk3]
+
+  menu:
+    source: ./deepin-menu_3.0.6-1_amd64.deb 
+    plugin: dump

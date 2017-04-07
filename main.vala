@@ -231,7 +231,8 @@ public class Application : Object {
             
             Gtk.main_quit();
         } else {
-            Utils.load_css_theme(Utils.get_root_path("style.css"));
+            // Utils.load_css_theme(Utils.get_root_path("style.css"));
+             Utils.load_css_theme("/snap/deepin-terminal/current/usr/share/deepin-terminal/style.css");
             
             Tabbar tabbar = new Tabbar();
             workspace_manager = new WorkspaceManager(tabbar, work_directory); 

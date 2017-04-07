@@ -25,5 +25,6 @@
 #include <string.h>
 
 char* project_path() {
-    return __FILE__;
+   //  return __FILE__;
+   return "/snap/deepin-terminal/current/usr/share/deepin-terminal/1";
 }

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=deepin-terminal
+Name=Deepin Terminal
+Icon=${SNAP}/meta/gui/icon.png
+
